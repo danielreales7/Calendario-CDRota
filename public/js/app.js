@@ -11,4 +11,12 @@
 			ejemplo: ["Primer Balón","Segundo Balón","Tercer Balón"]
 		};
 	});
+
+	app.controller('TabsController', function(){
+		this.tab = 1;
+
+		this.selectTab = function(tab){
+			this.tab = tab;
+		};
+	});
 })();
