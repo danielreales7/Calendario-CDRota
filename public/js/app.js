@@ -7,7 +7,8 @@
 			equipoLocal: 'Chipiona CF',
 			equipoVisitante: 'CD Rota',
 			resultado: 'por concretar',
-			goles: ["David Villalba"]
+			goles: ["David Villalba"],
+			ejemplo: ["Primer Balón","Segundo Balón","Tercer Balón"]
 		};
 	});
 })();
