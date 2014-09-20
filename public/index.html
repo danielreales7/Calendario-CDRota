@@ -2,20 +2,65 @@
 <html ng-app="calendario"><!-- Aquí debemos referenciar el nombre de nuestro módulo -->
 <head>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Calendario CD Rota</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular.min.js"></script>
-	<script src="js/app.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<div ng-controller="EquiposController as equiposCtrl"><!-- Indicamos mediante una directiva que controlador vamos a usar -->
-		<h1>{{equiposCtrl.equipos.equipoLocal}} - {{equiposCtrl.equipos.equipoVisitante}}</h1>
-		<img src="img/{{equiposCtrl.equipos.equipoLocal | lowercase}}.jpg" height="180" /><img src="img/{{equiposCtrl.equipos.equipoVisitante | lowercase}}.jpg" height="200" />
-		<h2>{{equiposCtrl.equipos.jornada}}ª jornada</h2>
-		<ul>
-			<li><strong>Resultado final:</strong> {{equiposCtrl.equipos.resultado}}</li>
-			<li><strong>Goles:</strong> {{equiposCtrl.equipos.goles.join(', ')}}</li><!-- La función join que tenemos declarada, nos devuelve los elementos del array separados por coma -->
-		</ul>
-	</div>
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">
+	            <img src="img/logo.png">
+	            Calendario CD Rota
+	          </a>
+	        </div><!-- /.navbar-header -->
+	    </div><!-- /.container-fluid -->
+	</div><!-- /.navbar -->
+	<div class="container-fluid contenedor">
+		<div ng-controller="EquiposController as equiposCtrl"><!-- Indicamos mediante una directiva que controlador vamos a usar -->
+			<div class="page-header">
+				<h1>{{equiposCtrl.equipos.equipoLocal}} - {{equiposCtrl.equipos.equipoVisitante}}</h1>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<img class="escudo left-block" ng-src="img/{{equiposCtrl.equipos.equipoLocal | lowercase}}.jpg" height="180" /><img class="escudo right-block" ng-src="img/{{equiposCtrl.equipos.equipoVisitante | lowercase}}.jpg" height="200" />
+				</div>
+				<div class="col-md-6">
+					<ul class="nav nav-tabs nav-justified">
+				        <li class="active"><a href>Resultado</a></li>
+				        <li><a href>Goles</a></li>
+				    </ul>
+				    <div class="tab-content">
+				    	<div>
+					    	<ul class="list-group">
+								<li class="list-group-item"><strong>Resultado final:</strong> {{equiposCtrl.equipos.resultado}}</li>
+								<li class="list-group-item"><strong>Goles:</strong> {{equiposCtrl.equipos.goles.join(', ')}}</li><!-- La función join que tenemos declarada, nos devuelve los elementos del array separados por coma -->
+							</ul>
+						</div>
+				    </div>
+				    <div class="tab-content">
+				    	<div>
+					    	<ul class="list-group">
+								<li class="list-group-item"><strong>Goles:</strong> {{equiposCtrl.equipos.goles.join(', ')}}</li><!-- La función join que tenemos declarada, nos devuelve los elementos del array separados por coma -->
+							</ul>
+						</div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div><!-- /.container -->
+	<!-- scripts -->
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<!-- /.scripts -->
 </body>
 </html>
