@@ -10,7 +10,7 @@
 <body>
 	<div ng-controller="EquiposController as equiposCtrl"><!-- Indicamos mediante una directiva que controlador vamos a usar -->
 		<h1>{{equiposCtrl.equipos.equipoLocal}} - {{equiposCtrl.equipos.equipoVisitante}}</h1>
-		<img src="img/{{equiposCtrl.equipos.equipoLocal}}.jpg" height="180" /><img src="img/{{equiposCtrl.equipos.equipoVisitante}}.jpg" height="200" />
+		<img src="img/{{equiposCtrl.equipos.equipoLocal | lowercase}}.jpg" height="180" /><img src="img/{{equiposCtrl.equipos.equipoVisitante | lowercase}}.jpg" height="200" />
 		<h2>{{equiposCtrl.equipos.jornada}}ª jornada</h2>
 		<ul>
 			<li><strong>Resultado final:</strong> {{equiposCtrl.equipos.resultado}}</li>
