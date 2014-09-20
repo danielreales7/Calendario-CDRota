@@ -43,14 +43,14 @@
 				    	<div>
 					    	<ul class="list-group">
 								<li class="list-group-item"><strong>Resultado final:</strong> {{equiposCtrl.equipos.resultado}}</li>
-								<li class="list-group-item"><strong>Goles:</strong> {{equiposCtrl.equipos.goles.join(', ')}}</li><!-- La función join que tenemos declarada, nos devuelve los elementos del array separados por coma -->
+								<!--<li class="list-group-item"><strong>Goles:</strong> {{equiposCtrl.equipos.goles.join(', ')}}</li>--><!-- La función join que tenemos declarada, nos devuelve los elementos del array separados por coma -->
 							</ul>
 						</div>
 				    </div>
 				    <div class="tab-content">
 				    	<div>
 					    	<ul class="list-group">
-								<li class="list-group-item"><strong>Goles:</strong> {{equiposCtrl.equipos.goles.join(', ')}}</li><!-- La función join que tenemos declarada, nos devuelve los elementos del array separados por coma -->
+								<li class="list-group-item"><strong>Goles:</strong> <span ng-repeat="goles in equiposCtrl.equipos.goles" class="label label-primary">{{goles}}</span></li><!-- La función join que tenemos declarada, nos devuelve los elementos del array separados por coma -->
 							</ul>
 						</div>
 				    </div>
