@@ -70,6 +70,42 @@
 				    </div>
 				</div>
 			</div>
+			<!-- Comentarios -->
+			<button class="btn btn-primary">Mostrar comentarios <span class="badge">1</span></button>
+			<div class="panel panel-primary">
+			  <div class="panel-heading">
+			    <h1 class="panel-title">Comentarios <button class="close pull-right">&times;</button></h1>
+			  </div>
+			  <div class="panel-body">
+			    <form name="commentsForm" class="form-horizontal" role="form" novalidate>
+			      <div class="form-group">
+			        <div class="col-sm-6">
+			          <textarea placeholder="Por favor díganos que piensa del partido -" class="form-control" required></textarea>
+			        </div>
+			        <div class="col-sm-4">
+			          <input  type="email" placeholder="Introduzca su email" class="form-control">
+			          <label>
+			            <input type="checkbox">
+			            Anónimo
+			          </label>
+			        </div>
+			        <div class="col-sm-2">
+			          <button type="submit" class="btn btn-lg">Comentar</button>
+			        </div>
+			      </div>
+			    </form>
+			    <blockquote>
+			      <p>Ejemplo de comentario</p>
+			      <footer>
+			        Comentado por 
+			        <a href="#"></a> 
+			        <em>Anónimo</em>
+			        el <span>fecha</span>
+			      </footer>
+			    </blockquote>
+			  </div>
+			</div>
+			<!-- /Comentarios -->
 		</div>
 	</div><!-- /.container -->
 	<!-- scripts -->
