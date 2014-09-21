@@ -20,6 +20,15 @@
 		};
 	});
 
+	app.controller('CommentsController', function(){
+		this.comments = []; //Vamos a inicializar un arreglo donde vamos a ir guardando los comentarios
+		this.show = false; //Con esto vamos a saber si nuestro panel se está mostrando o está oculto
+		// Con esta función estamos cambiando de estado un valor Booleano
+		this.toggle = function(){
+			this.show = !this.show;
+		};
+	});
+
 	app.filter('imageify', function(){
 		return function(input){
 			var url = "img/" + input.toLowerCase() + ".jpg";
