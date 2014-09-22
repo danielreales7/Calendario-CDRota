@@ -42,10 +42,38 @@
 		};
 	});
 
+	app.directive('partidoEquipos', function(){
+		return {
+			restrict: 'E', //Esta directiva quiere decir que estamos creando un elemento HTML
+			templateUrl: 'partials/partido-equipos.html'
+		};
+	});
+
+	app.directive('partidoImages', function(){
+		return {
+			restrict: 'E', //Esta directiva quiere decir que estamos creando un elemento HTML
+			templateUrl: 'partials/partido-images.html'
+		};
+	});
+
 	app.directive('partidoResultado', function(){
 		return {
 			restrict: 'E', //Esta directiva quiere decir que estamos creando un elemento HTML
 			templateUrl: 'partials/partido-resultado.html'
+		};
+	});
+
+	app.directive('partidoGoles', function(){
+		return {
+			restrict: 'E', //Esta directiva quiere decir que estamos creando un elemento HTML
+			templateUrl: 'partials/partido-goles.html'
+		};
+	});
+
+	app.directive('partidoEjemplo', function(){
+		return {
+			restrict: 'E', //Esta directiva quiere decir que estamos creando un elemento HTML
+			templateUrl: 'partials/partido-ejemplo.html'
 		};
 	});
 

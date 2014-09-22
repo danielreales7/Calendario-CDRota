@@ -1,0 +1,10 @@
+<div class="text-center" ng-repeat="balones in equiposCtrl.equipos.ejemplo">
+	<a href="#">
+		<img src="img/logo.png">
+		<p>
+			<strong>{{balones}}</strong>
+		</p>
+	</a>
+	<span ng-hide="$last" class="glyphicon glyphicon-arrow-down"></span>
+	<!-- La directiva ng-hide="$last" nos indica que la última flecha hacia abajo no se va a mostrar -->
+</div>

@@ -28,11 +28,11 @@
 	<div class="container-fluid contenedor">
 		<div ng-controller="EquiposController as equiposCtrl"><!-- Indicamos mediante una directiva que controlador vamos a usar -->
 			<div class="page-header">
-				<h1>{{equiposCtrl.equipos.equipoLocal}} - {{equiposCtrl.equipos.equipoVisitante}}</h1>
+				<partido-equipos></partido-equipos>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<img class="escudo left-block" ng-src="img/{{equiposCtrl.equipos.equipoLocal | lowercase}}.jpg" height="180" /><img class="escudo right-block" ng-src="img/{{equiposCtrl.equipos.equipoVisitante | lowercase}}.jpg" height="200" />
+					<partido-images></partido-images>
 				</div>
 				<div class="col-md-6" ng-controller="TabsController as tabs">
 					<ul class="nav nav-tabs nav-justified">
@@ -47,22 +47,11 @@
 						</div>
 						<!-- Goles -->
 						<div ng-show="tabs.tab === 2">
-					    	<ul class="list-group">
-								<li class="list-group-item"><strong>Goles:</strong> <span ng-repeat="goles in equiposCtrl.equipos.goles" class="label label-primary">{{goles}}</span></li><!-- La función join que tenemos declarada, nos devuelve los elementos del array separados por coma -->
-							</ul>
+					    	<partido-goles></partido-goles>
 						</div>
 						<!-- Ejemplo -->
 						<div ng-show="tabs.tab === 3">
-							<div class="text-center" ng-repeat="balones in equiposCtrl.equipos.ejemplo">
-								<a href="#">
-									<img src="img/logo.png">
-									<p>
-										<strong>{{balones}}</strong>
-									</p>
-								</a>
-								<span ng-hide="$last" class="glyphicon glyphicon-arrow-down"></span>
-								<!-- La directiva ng-hide="$last" nos indica que la última flecha hacia abajo no se va a mostrar -->
-							</div>
+							<partido-ejemplo></partido-ejemplo>
 						</div>
 				    </div>
 				</div>
