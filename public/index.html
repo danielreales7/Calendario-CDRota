@@ -101,7 +101,7 @@
 				        Comentado por 
 				        <a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">{{comment.email}}</a> 
 				        <em ng-if="comment.anonymous">Anónimo</em>
-				        el <span>{{comment.date}}</span>
+				        el <span>{{comment.date | date : 'medium'}}</span>
 				      </footer>
 				    </blockquote>
 				  </div>
