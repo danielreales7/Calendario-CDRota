@@ -45,6 +45,7 @@
 	app.directive('partidoEquipos', function(){
 		return {
 			restrict: 'E', //Esta directiva quiere decir que estamos creando un elemento HTML
+			//Si fuera 'A' estaría declarada como atributo y se pondría en el html <div partidos-equipos></div>
 			templateUrl: 'partials/partido-equipos.html'
 		};
 	});
