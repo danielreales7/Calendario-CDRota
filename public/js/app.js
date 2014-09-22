@@ -42,6 +42,13 @@
 		};
 	});
 
+	app.directive('partidoResultado', function(){
+		return {
+			restrict: 'E', //Esta directiva quiere decir que estamos creando un elemento HTML
+			templateUrl: 'partials/partido-resultado.html'
+		};
+	});
+
 	app.filter('imageify', function(){
 		return function(input){
 			var url = "img/" + input.toLowerCase() + ".jpg";

@@ -43,10 +43,7 @@
 				    <div class="tab-content">
 				    	<!-- Resultado -->
 				    	<div ng-show="tabs.tab === 1">
-					    	<ul class="list-group">
-								<li class="list-group-item"><strong>Resultado final:</strong> {{equiposCtrl.equipos.resultado}}</li>
-								<!--<li class="list-group-item"><strong>Goles:</strong> {{equiposCtrl.equipos.goles.join(', ')}}</li>--><!-- La función join que tenemos declarada, nos devuelve los elementos del array separados por coma -->
-							</ul>
+					    	<partido-resultado></partido-resultado>
 						</div>
 						<!-- Goles -->
 						<div ng-show="tabs.tab === 2">
