@@ -78,7 +78,7 @@
 				    <h1 class="panel-title">Comentarios <button ng-click="cmtsCtrl.toggle()" class="close pull-right">&times;</button></h1>
 				  </div>
 				  <div class="panel-body">
-				    <form name="commentsForm" class="form-horizontal" role="form" novalidate>
+				    <form name="commentsForm" class="form-horizontal" role="form" ng-submit="cmtsCtrl.addComment()" novalidate>
 				      <div class="form-group">
 				        <div class="col-sm-6">
 				          <textarea ng-model="cmtsCtrl.comment.body" placeholder="Por favor díganos que piensa del partido -" class="form-control" required></textarea>
@@ -95,13 +95,13 @@
 				        </div>
 				      </div>
 				    </form>
-				    <blockquote>
-				      <p>{{cmtsCtrl.comment.body}}</p>
+				    <blockquote ng-repeat="comment in cmtsCtrl.comments">
+				      <p>{{comment.body}}</p>
 				      <footer>
 				        Comentado por 
-				        <a ng-if="!cmtsCtrl.comment.anonymous" href="mailto:{{cmtsCtrl.comment.email}}">{{cmtsCtrl.comment.email}}</a> 
-				        <em ng-if="cmtsCtrl.comment.anonymous">Anónimo</em>
-				        el <span>{{cmtsCtrl.comment.date}}</span>
+				        <a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">{{comment.email}}</a> 
+				        <em ng-if="comment.anonymous">Anónimo</em>
+				        el <span>{{comment.date}}</span>
 				      </footer>
 				    </blockquote>
 				  </div>

@@ -34,6 +34,10 @@
 				this.comment.email = "";
 			}
 		};
+
+		this.addComment = function(){
+			this.comments.push(this.comment);
+		};
 	});
 
 	app.filter('imageify', function(){
