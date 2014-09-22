@@ -81,12 +81,12 @@
 				    <form name="commentsForm" class="form-horizontal" role="form" novalidate>
 				      <div class="form-group">
 				        <div class="col-sm-6">
-				          <textarea ng-model="comment.body" placeholder="Por favor díganos que piensa del partido -" class="form-control" required></textarea>
+				          <textarea ng-model="cmtsCtrl.comment.body" placeholder="Por favor díganos que piensa del partido -" class="form-control" required></textarea>
 				        </div>
 				        <div class="col-sm-4">
-				          <input ng-model="comment.email" ng-disabled="comment.anonymous" type="email" placeholder="Introduzca su email" class="form-control">
+				          <input ng-model="cmtsCtrl.comment.email" ng-disabled="cmtsCtrl.comment.anonymous" type="email" placeholder="Introduzca su email" class="form-control">
 				          <label>
-				            <input ng-model="comment.anonymous" type="checkbox">
+				            <input ng-model="cmtsCtrl.comment.anonymous" ng-change="cmtsCtrl.anonymousChanged()" type="checkbox">
 				            Anónimo
 				          </label>
 				        </div>
@@ -96,12 +96,12 @@
 				      </div>
 				    </form>
 				    <blockquote>
-				      <p>{{comment.body}}</p>
+				      <p>{{cmtsCtrl.comment.body}}</p>
 				      <footer>
 				        Comentado por 
-				        <a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">{{comment.email}}</a> 
-				        <em ng-if="comment.anonymous">Anónimo</em>
-				        el <span>fecha</span>
+				        <a ng-if="!cmtsCtrl.comment.anonymous" href="mailto:{{cmtsCtrl.comment.email}}">{{cmtsCtrl.comment.email}}</a> 
+				        <em ng-if="cmtsCtrl.comment.anonymous">Anónimo</em>
+				        el <span>{{cmtsCtrl.comment.date}}</span>
 				      </footer>
 				    </blockquote>
 				  </div>

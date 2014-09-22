@@ -22,10 +22,17 @@
 
 	app.controller('CommentsController', function(){
 		this.comments = []; //Vamos a inicializar un arreglo donde vamos a ir guardando los comentarios
+		this.comment = {}; //Aquí vamos almacenar los elementos del formulario
 		this.show = false; //Con esto vamos a saber si nuestro panel se está mostrando o está oculto
 		// Con esta función estamos cambiando de estado un valor Booleano
 		this.toggle = function(){
 			this.show = !this.show;
+		};
+
+		this.anonymousChanged = function(){
+			if(this.comment.anonymous){
+				this.comment.email = "";
+			}
 		};
 	});
 
