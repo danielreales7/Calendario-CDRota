@@ -57,43 +57,7 @@
 				</div>
 			</div>
 			<!-- Comentarios -->
-			<div ng-controller="CommentsController as cmtsCtrl">
-				<button ng-hide="cmtsCtrl.show" ng-click="cmtsCtrl.toggle()" class="btn btn-primary">Mostrar comentarios <span class="badge">{{cmtsCtrl.comments.length}}</span></button>
-				<div ng-show="cmtsCtrl.show" class="panel panel-primary">
-				  <div class="panel-heading">
-				    <h1 class="panel-title">Comentarios <button ng-click="cmtsCtrl.toggle()" class="close pull-right">&times;</button></h1>
-				  </div>
-				  <div class="panel-body">
-				    <form name="commentsForm" class="form-horizontal" role="form" ng-submit="commentsForm.$valid && cmtsCtrl.addComment()" novalidate>
-				      <div class="form-group">
-				        <div class="col-sm-6">
-				          <textarea ng-model="cmtsCtrl.comment.body" placeholder="Por favor díganos que piensa del partido {{equiposCtrl.equipos.equipoLocal}} - {{equiposCtrl.equipos.equipoVisitante}}" class="form-control" required></textarea>
-				        </div>
-				        <div class="col-sm-4">
-				          <input ng-model="cmtsCtrl.comment.email" ng-disabled="cmtsCtrl.comment.anonymous" type="email" placeholder="Introduzca su email" class="form-control" ng-required="!cmtsCtrl.comment.anonymous">
-				          <label>
-				            <input ng-model="cmtsCtrl.comment.anonymous" ng-change="cmtsCtrl.anonymousChanged()" type="checkbox">
-				            Anónimo
-				          </label>
-				        </div>
-				        <div class="col-sm-2">
-				          <button type="submit" class="btn btn-lg">Comentar</button>
-				        </div>
-				      </div>
-				    </form>
-				    <div ng-if="!commentsForm.$valid" class="alert alert-danger">Formulario inválido</div>
-				    <blockquote ng-repeat="comment in cmtsCtrl.comments">
-				      <p>{{comment.body}}</p>
-				      <footer>
-				        Comentado por 
-				        <a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">{{comment.email}}</a> 
-				        <em ng-if="comment.anonymous">Anónimo</em>
-				        el <span>{{comment.date | date : 'medium'}}</span>
-				      </footer>
-				    </blockquote>
-				  </div>
-				</div>
-			</div>
+			<partido-comments></partido-comments>
 			<!-- /Comentarios -->
 		</div>
 	</div><!-- /.container -->
