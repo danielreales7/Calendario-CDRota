@@ -1,24 +1,7 @@
 (function (){
-	var app = angular.module('calendario', []); //Nuestro módulo ahora mismo no tiene dependencias por eso ponemos []
-
-	app.controller('EquiposController', function(){
-		this.equipos = {
-			jornada: 1,
-			equipoLocal: 'Chipiona CF',
-			equipoVisitante: 'CD Rota',
-			resultado: 'por concretar',
-			goles: ["David Villalba"],
-			ejemplo: ["Primer Balón","Segundo Balón","Tercer Balón"]
-		};
-	});
-
-	app.controller('TabsController', function(){
-		this.tab = 1;
-
-		this.selectTab = function(tab){
-			this.tab = tab;
-		};
-	});
+	var app = angular.module('calendario', [
+		'calendario.controllers'
+	]); //Nuestro módulo ahora mismo no tiene dependencias por eso ponemos []
 
 	app.directive('partidoEquipos', function(){
 		return {
