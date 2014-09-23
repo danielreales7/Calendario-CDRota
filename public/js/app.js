@@ -9,7 +9,8 @@
 	app.config(['$routeProvider', function($routeProvider){
 		$routeProvider
 			.when('/', {
-				templateUrl: 'views/calendario.html'
+				templateUrl: 'views/calendario.html',
+				controller: 'CalendarioController'
 			})
 			.when('/partidos/:jornada', {
 				templateUrl: 'views/partidos.html',

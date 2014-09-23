@@ -1,6 +1,10 @@
 (function (){
 	angular.module('calendario.controllers', [])
 
+		.controller('calendarioController', ['$scope', '$http', function($scope, $http){
+		
+		}])
+
 		.controller('EquiposController', function(){
 			this.equipos = {
 				jornada: 1,
