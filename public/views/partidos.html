@@ -1,0 +1,34 @@
+<div ng-controller="EquiposController as equiposCtrl"><!-- Indicamos mediante una directiva que controlador vamos a usar -->
+	<div class="page-header">
+		<partido-equipos></partido-equipos>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<partido-images></partido-images>
+		</div>
+		<div class="col-md-6" ng-controller="TabsController as tabs">
+			<ul class="nav nav-tabs nav-justified">
+		        <li ng-class="{ active : tabs.tab === 1 }"><a ng-click="tabs.selectTab(1)" href="#">Resultado</a></li>
+		        <li ng-class="{ active : tabs.tab === 2 }"><a ng-click="tabs.selectTab(2)" href="#">Goles</a></li>
+		        <li ng-class="{ active : tabs.tab === 3 }"><a ng-click="tabs.selectTab(3)" href="#">Ejemplo</a></li>
+		    </ul>
+		    <div class="tab-content">
+		    	<!-- Resultado -->
+		    	<div ng-show="tabs.tab === 1">
+			    	<partido-resultado></partido-resultado>
+				</div>
+				<!-- Goles -->
+				<div ng-show="tabs.tab === 2">
+			    	<partido-goles></partido-goles>
+				</div>
+				<!-- Ejemplo -->
+				<div ng-show="tabs.tab === 3">
+					<partido-ejemplo></partido-ejemplo>
+				</div>
+		    </div>
+		</div>
+	</div>
+	<!-- Comentarios -->
+	<partido-comments></partido-comments>
+	<!-- /Comentarios -->
+</div>
