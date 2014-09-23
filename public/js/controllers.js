@@ -1,8 +1,13 @@
 (function (){
 	angular.module('calendario.controllers', [])
 
-		.controller('calendarioController', ['$scope', '$http', function($scope, $http){
-		
+		.controller('CalendarioController', ['$scope', '$http', function($scope, $http){
+			$scope.partidos = [];
+
+			$http.get('/partidos.json')
+				.success(function(data){
+					$scope.partidos = data;
+				});
 		}])
 
 		.controller('EquiposController', function(){
