@@ -1,0 +1,44 @@
+[
+	{
+		"jornada": "1",
+		"equipoLocal": "Chipiona CF",
+		"equipoVisitante": "CD Rota",
+		"resultado": "0 - 1",
+		"goles": [
+			"David Villalba"
+		],
+		"ejemplo": [
+			"Primer Balón",
+			"Segundo Balón",
+			"Tercer balón"
+		]  
+	},
+	{
+		"jornada": "2",
+		"equipoLocal": "CD Rota",
+		"equipoVisitante": "Atl. Sanluqueño",
+		"resultado": "1 - 1",
+		"goles": [
+			"David Villalba"
+		],
+		"ejemplo": [
+			"Primer Balón",
+			"Segundo Balón",
+			"Tercer balón"
+		] 
+	},
+	{
+		"jornada": "3",
+		"equipoLocal": "O. Valverdeña",
+		"equipoVisitante": "CD Rota",
+		"resultado": "2 - 0",
+		"goles": [
+			"-"
+		],
+		"ejemplo": [
+			"Primer Balón",
+			"Segundo Balón",
+			"Tercer balón"
+		] 
+	}
+]
