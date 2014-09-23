@@ -9,9 +9,16 @@
 	app.config(['$routeProvider', function($routeProvider){
 		$routeProvider
 			.when('/', {
+				templateUrl: 'views/calendario.html'
+			})
+			.when('/partidos/:jornada', {
 				templateUrl: 'views/partidos.html',
 				controller: 'EquiposController',
 				controllerAs: 'equiposCtrl'
 			})
+			//Si usamos cualquier otra ruta que no esté declarada aquí ira al directorio raíz
+			.otherwise({
+				redirectTo: '/'
+			});
 	}]);
 })();
