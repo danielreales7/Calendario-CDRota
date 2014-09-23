@@ -8,10 +8,10 @@
 			}
 		})
 
-		.filter('imageify', function(){
+		.filter('imageify', ['$filter', function($filter){
 			return function(input){
-				var url = "img/" + input.toLowerCase() + ".jpg";
+				var url = "img/" + $filter('normalize')(input) + ".jpg";
 				return url;
-			}
-		});
+			};
+		}]);
 })();
