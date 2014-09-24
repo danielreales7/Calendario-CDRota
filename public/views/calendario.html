@@ -3,7 +3,7 @@
 		<h1>Calendario</h1>
 	</div>
 	<div ng-repeat="partido in partidos"><!-- in partidos se refiere al nombre del archivo .json -->
-		<h1>{{partido.equipoLocal}} - {{partido.equipoVisitante}}</h1>
-		<img ng-src="{{partido.equipoLocal | imageify}}"><img ng-src="{{partido.equipoVisitante | imageify}}">
+		<partido-equipos></partido-equipos>
+		<partido-images></partido-images>
 	</div>
 </div>

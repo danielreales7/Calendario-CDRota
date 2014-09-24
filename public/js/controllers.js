@@ -10,8 +10,8 @@
 				});
 		}])
 
-		.controller('EquiposController', function(){
-			this.equipos = {
+		.controller('EquiposController', ['$scope', function($scope){
+			$scope.equipos = {
 				jornada: 1,
 				equipoLocal: 'Chipiona CF',
 				equipoVisitante: 'CD Rota',
@@ -19,7 +19,7 @@
 				goles: ["David Villalba"],
 				ejemplo: ["Primer Balón","Segundo Balón","Tercer Balón"]
 			};
-		})
+		}])
 		
 		.controller('TabsController', function(){
 			this.tab = 1;
