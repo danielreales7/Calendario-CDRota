@@ -1,9 +1,9 @@
 (function (){
 	angular.module('calendario.controllers', [])
 
-		.controller('CalendarioController', ['$scope', 'partidoService', function($scope, $partidoService){
+		.controller('CalendarioController', ['$scope', 'partidoService', function($scope, partidoService){
 			partidoService.all().then(function(data){
-				$scope.equipos = data;
+				$scope.partidos = data;
 			});
 		}])
 
