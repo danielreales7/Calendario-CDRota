@@ -3,7 +3,8 @@
 		'ngRoute',
 		'calendario.controllers',
 		'calendario.directives',
-		'calendario.filters'
+		'calendario.filters',
+		'calendario.services'
 	]); //Nuestro módulo ahora mismo no tiene dependencias por eso ponemos []
 	//Creamos nuestra inyección de dependencias $routeProvider
 	app.config(['$routeProvider', function($routeProvider){

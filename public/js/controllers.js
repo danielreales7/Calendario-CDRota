@@ -1,13 +1,10 @@
 (function (){
 	angular.module('calendario.controllers', [])
 
-		.controller('CalendarioController', ['$scope', '$http', function($scope, $http){
-			$scope.partidos = [];
-
-			$http.get('/partidos.json')
-				.success(function(data){
-					$scope.partidos = data;
-				});
+		.controller('CalendarioController', ['$scope', 'partidoService', function($scope, $partidoService){
+			partidoService.all().then(function(data){
+				$scope.equipos = data;
+			});
 		}])
 
 		.controller('EquiposController', ['$scope', function($scope){
