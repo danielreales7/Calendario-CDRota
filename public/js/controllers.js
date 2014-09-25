@@ -7,10 +7,11 @@
 			});
 		}])
 
-		.controller('EquiposController', ['$scope', 'partidoService', function($scope, partidoService){
+		.controller('EquiposController', ['$scope', '$routeParams', 'partidoService', function($scope, $routeParams, partidoService){
+			var jornada = $routeParams.jornada; // $routeParams.jornada quiere decir que en el archivo donde estan las rutas app.js la ruta '/partidos/:jornada' contiene el mismo nombre que este
 			$scope.equipos = {};
 
-			partidoService.byName('1')
+			partidoService.byName(jornada)
 				.then(function(data){
 					$scope.equipos = data;
 				});

@@ -1,6 +1,6 @@
 <div>
 	<div class="page-header">
-		<h1>Calendario</h1>
+		<h1>Calendario <small class="pull-right">Mostrando <span class="badge">{{partidos.length}}</span> Partidos</small></h1>
 	</div>
 	<div class="partidos" ng-repeat="equipos in partidos"><!-- in partidos se refiere al nombre declarado en el controlador $scope.partidos -->
 		<a href="/#partidos/{{equipos.jornada | normalize}}">
