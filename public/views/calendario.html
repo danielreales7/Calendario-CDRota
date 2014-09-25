@@ -2,8 +2,10 @@
 	<div class="page-header">
 		<h1>Calendario</h1>
 	</div>
-	<div ng-repeat="equipos in partidos"><!-- in partidos se refiere al nombre del archivo .json -->
-		<partido-equipos></partido-equipos>
-		<partido-images></partido-images>
+	<div class="partidos" ng-repeat="equipos in partidos"><!-- in partidos se refiere al nombre del archivo .json -->
+		<a href="/#partidos/{{equipos.jornada | normalize}}">
+			<partido-equipos></partido-equipos>
+			<partido-images></partido-images>
+		</a>
 	</div>
 </div>
