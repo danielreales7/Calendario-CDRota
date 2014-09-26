@@ -37,32 +37,44 @@
 			};
 		})
 
-		.directive('partidoComments', function(){
+		.directive('partidoComments', ['partidoService', function(partidoService){
 			return {
 				restrict: 'E', //Esta directiva quiere decir que estamos creando un elemento HTML
 				templateUrl: 'partials/partido-comments.html',
-				controller: function(){
-					this.comments = []; //Vamos a inicializar un arreglo donde vamos a ir guardando los comentarios
-					this.comment = {}; //Aquí vamos almacenar los elementos del formulario
-					this.show = false; //Con esto vamos a saber si nuestro panel se está mostrando o está oculto
+				scope: {
+					jornada: '@jornada'
+				},
+				link: function(scope, element, attributes){
+					attributes.$observe('jornada', function(value){
+						if(value){
+							scope.jornada = value;
+							scope.comments = partidoService.getComments(value);
+						}
+					});
+				},
+				controller: function($scope){
+					$scope.comments = partidoService.getComments($scope.jornada); //Vamos a inicializar un arreglo donde vamos a ir guardando los comentarios
+					$scope.comment = {}; //Aquí vamos almacenar los elementos del formulario
+					$scope.show = false; //Con esto vamos a saber si nuestro panel se está mostrando o está oculto
 					// Con esta función estamos cambiando de estado un valor Booleano
-					this.toggle = function(){
-						this.show = !this.show;
+					$scope.toggle = function(){
+						$scope.show = !$scope.show;
 					};
 
-					this.anonymousChanged = function(){
-						if(this.comment.anonymous){
-							this.comment.email = "";
+					$scope.anonymousChanged = function(){
+						if($scope.comment.anonymous){
+							$scope.comment.email = "";
 						}
 					};
 
-					this.addComment = function(){
-						this.comment.date = Date.now();
-						this.comments.push(this.comment);
-						this.comment = {};
+					$scope.addComment = function(){
+						$scope.comment.date = Date.now();
+						partidoService.saveComment($scope.jornada, $scope.comment);
+						$scope.comments = partidoService.getComments($scope.jornada);
+						$scope.comment = {};
 					};
 				},
 				controllerAs: 'cmtsCtrl'
 			};
-		});
+		}]);
 })();

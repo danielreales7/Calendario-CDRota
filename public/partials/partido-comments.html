@@ -1,18 +1,18 @@
-<button ng-hide="cmtsCtrl.show" ng-click="cmtsCtrl.toggle()" class="btn btn-primary">Mostrar comentarios <span class="badge">{{cmtsCtrl.comments.length}}</span></button>
-<div ng-show="cmtsCtrl.show" class="panel panel-primary">
+<button ng-hide="show" ng-click="toggle()" class="btn btn-primary">Mostrar comentarios <span class="badge">{{comments.length}}</span></button>
+<div ng-show="show" class="panel panel-primary">
   <div class="panel-heading">
-    <h1 class="panel-title">Comentarios <button ng-click="cmtsCtrl.toggle()" class="close pull-right">&times;</button></h1>
+    <h1 class="panel-title">Comentarios <button ng-click="toggle()" class="close pull-right">&times;</button></h1>
   </div>
   <div class="panel-body">
-    <form name="commentsForm" class="form-horizontal" role="form" ng-submit="commentsForm.$valid && cmtsCtrl.addComment()" novalidate>
+    <form name="commentsForm" class="form-horizontal" role="form" ng-submit="commentsForm.$valid && addComment()" novalidate>
       <div class="form-group">
         <div class="col-sm-6">
-          <textarea ng-model="cmtsCtrl.comment.body" placeholder="Por favor díganos que piensa del partido {{equiposCtrl.equipos.equipoLocal}} - {{equiposCtrl.equipos.equipoVisitante}}" class="form-control" required></textarea>
+          <textarea ng-model="comment.body" placeholder="Por favor díganos que piensa del partido {{equipoLocal}} - {{equipoVisitante}}" class="form-control" required></textarea>
         </div>
         <div class="col-sm-4">
-          <input ng-model="cmtsCtrl.comment.email" ng-disabled="cmtsCtrl.comment.anonymous" type="email" placeholder="Introduzca su email" class="form-control" ng-required="!cmtsCtrl.comment.anonymous">
+          <input ng-model="comment.email" ng-disabled="comment.anonymous" type="email" placeholder="Introduzca su email" class="form-control" ng-required="!comment.anonymous">
           <label>
-            <input ng-model="cmtsCtrl.comment.anonymous" ng-change="cmtsCtrl.anonymousChanged()" type="checkbox">
+            <input ng-model="comment.anonymous" ng-change="anonymousChanged()" type="checkbox">
             Anónimo
           </label>
         </div>
@@ -22,7 +22,7 @@
       </div>
     </form>
     <div ng-if="!commentsForm.$valid" class="alert alert-danger">Formulario inválido</div>
-    <blockquote ng-repeat="comment in cmtsCtrl.comments">
+    <blockquote ng-repeat="comment in comments">
       <p>{{comment.body}}</p>
       <footer>
         Comentado por 

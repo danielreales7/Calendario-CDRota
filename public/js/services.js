@@ -1,7 +1,8 @@
 (function (){
 	angular.module('calendario.services', [])
 
-		.factory('partidoService', ['$http', '$q', '$filter', function($http, $q, $filter){
+		.factory('partidoService', ['$http', '$q', '$filter', '$window', function($http, $q, $filter, $window){
+			var localStorage = $window.localStorage;
 			var normalize = $filter('normalize');//Llamamos a nuestra función normalize declarada en los filtros
 
 			function all(){
@@ -34,9 +35,30 @@
 				return deferred.promise;
 			}
 
+			function saveComment(jornada, comment){
+				var comments = getComments(jornada);
+
+				comments.push(comment);
+				localStorage.setItem(jornada, JSON.stringify(comments));
+			}
+
+			function getComments(jornada){
+				var comments = localStorage.getItem(jornada);
+
+				if(!comments){
+					comments = [];
+				}else{
+					comments = JSON.parse(comments);
+				}
+
+				return comments;
+			}
+
 			return{
 				all: all,
-				byName: byName
+				byName: byName,
+				saveComment: saveComment,
+				getComments: getComments
 			};
 		}]);
 })();
