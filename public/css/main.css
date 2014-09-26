@@ -26,10 +26,40 @@
 
 .partidos
 {
-	margin-bottom: 10px;
-	border: 1px solid blue;
-	border-radius: 20px;
-	padding: 10px;
+	height: 350px;
+}
+
+.partidos img
+{
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	max-width: 120px;
+	max-height: 220px;
+}
+
+.partidos h1
+{
+	margin: 0;
+	color: #000;
+	font-size: 10px;
+}
+
+.partidos h1 > small
+{
+	color: #ccc;
+}
+
+.partidos .panel 
+{
+	width: 400px;
+}
+
+.partidos .panel-body
+{
+	width: 400px;
 }
 
 .partidos:hover

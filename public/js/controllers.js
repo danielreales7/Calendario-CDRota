@@ -1,10 +1,17 @@
-(function (){
+(function (_){
 	angular.module('calendario.controllers', [])
 
 		.controller('CalendarioController', ['$scope', 'partidoService', function($scope, partidoService){
 			partidoService.all().then(function(data){
 				$scope.partidos = data;
+				$scope.groupped = partition(data, 4);
 			});
+
+			function partition(data, n) {
+		        return _.chain(data).groupBy(function (element, index) {
+		          return Math.floor(index / n);
+		        }).toArray().value();
+		      }
 		}])
 
 		.controller('EquiposController', ['$scope', '$routeParams', 'partidoService', function($scope, $routeParams, partidoService){
@@ -24,4 +31,4 @@
 				this.tab = tab;
 			};
 		});
-})();
+})(_);
