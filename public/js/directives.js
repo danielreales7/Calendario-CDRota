@@ -73,8 +73,7 @@
 						$scope.comments = partidoService.getComments($scope.jornada);
 						$scope.comment = {};
 					};
-				},
-				controllerAs: 'cmtsCtrl'
+				}
 			};
 		}]);
 })();

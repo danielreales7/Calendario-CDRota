@@ -7,7 +7,7 @@
     <form name="commentsForm" class="form-horizontal" role="form" ng-submit="commentsForm.$valid && addComment()" novalidate>
       <div class="form-group">
         <div class="col-sm-6">
-          <textarea ng-model="comment.body" placeholder="Por favor díganos que piensa del partido {{equipoLocal}} - {{equipoVisitante}}" class="form-control" required></textarea>
+          <textarea ng-model="comment.body" placeholder="Por favor díganos que piensa del partido de la jornada {{jornada}}" class="form-control" required></textarea>
         </div>
         <div class="col-sm-4">
           <input ng-model="comment.email" ng-disabled="comment.anonymous" type="email" placeholder="Introduzca su email" class="form-control" ng-required="!comment.anonymous">
