@@ -2,8 +2,10 @@
 	angular.module('calendario.filters', [])
 		.filter('normalize', function(){
 			return function(input){
+				if (!input) return "";
+				
 				input = input
-						.replace(/\W+/g, '');
+						.replace(/\W+/g, "");
 				return input.toLowerCase();
 			}
 		})

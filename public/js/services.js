@@ -2,8 +2,8 @@
 	angular.module('calendario.services', [])
 
 		.factory('partidoService', ['$http', '$q', '$filter', '$window', function($http, $q, $filter, $window){
+			var normalize = $filter('normalize'); //Llamamos a nuestra función normalize declarada en los filtros
 			var localStorage = $window.localStorage;
-			var normalize = $filter('normalize');//Llamamos a nuestra función normalize declarada en los filtros
 
 			function all(){
 				var deferred = $q.defer();
