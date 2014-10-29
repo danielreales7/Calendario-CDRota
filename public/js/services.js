@@ -37,7 +37,7 @@
 
 			function saveComment(jornada, comment){
 				var comments = getComments(jornada);
-
+				
 				comments.push(comment);
 				localStorage.setItem(jornada, JSON.stringify(comments));
 			}
